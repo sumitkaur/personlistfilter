@@ -1,0 +1,16 @@
+<div class="dropdownFilter">
+  <label>Select Filter Value</label>
+  <select  class="selectClass"[(ngModel)]="selectedOption">
+    <option value ="1">First Name</option>
+    <option value ="2">Last Name</option>
+  </select>
+</div>
+<div class="dropdownFilter">
+
+    <label>Enter Name:</label>
+    <input type="text" class="customInput" [(ngModel)]="inputFilter" (input)="inputFunction()"/>
+</div>
+
+<div class="personListContainer">
+  <div class="personList" *ngFor="let person of persons | personfilter:filterargs">{{person.firstname}} {{person.lastname}}</div>
+</div>
